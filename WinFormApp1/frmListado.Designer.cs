@@ -31,6 +31,7 @@ namespace WinFormApp1
         {
             this.dgvListado = new System.Windows.Forms.DataGridView();
             this.pbArticulo = new System.Windows.Forms.PictureBox();
+            this.listadotxt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.SuspendLayout();
@@ -38,25 +39,37 @@ namespace WinFormApp1
             // dgvListado
             // 
             this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListado.Location = new System.Drawing.Point(30, 86);
+            this.dgvListado.Location = new System.Drawing.Point(30, 73);
             this.dgvListado.Name = "dgvListado";
-            this.dgvListado.Size = new System.Drawing.Size(499, 169);
+            this.dgvListado.Size = new System.Drawing.Size(529, 313);
             this.dgvListado.TabIndex = 0;
             this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvListado_SelectionChanged);
             // 
             // pbArticulo
             // 
-            this.pbArticulo.Location = new System.Drawing.Point(590, 12);
+            this.pbArticulo.Location = new System.Drawing.Point(590, 73);
             this.pbArticulo.Name = "pbArticulo";
-            this.pbArticulo.Size = new System.Drawing.Size(395, 355);
+            this.pbArticulo.Size = new System.Drawing.Size(305, 313);
+            this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbArticulo.TabIndex = 1;
             this.pbArticulo.TabStop = false;
+            // 
+            // listadotxt
+            // 
+            this.listadotxt.AutoSize = true;
+            this.listadotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listadotxt.Location = new System.Drawing.Point(30, 28);
+            this.listadotxt.Name = "listadotxt";
+            this.listadotxt.Size = new System.Drawing.Size(201, 25);
+            this.listadotxt.TabIndex = 2;
+            this.listadotxt.Text = "Listado de Articulos";
             // 
             // frmListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 450);
+            this.ClientSize = new System.Drawing.Size(913, 407);
+            this.Controls.Add(this.listadotxt);
             this.Controls.Add(this.pbArticulo);
             this.Controls.Add(this.dgvListado);
             this.Name = "frmListado";
@@ -66,6 +79,7 @@ namespace WinFormApp1
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -73,5 +87,6 @@ namespace WinFormApp1
 
         private System.Windows.Forms.DataGridView dgvListado;
         private System.Windows.Forms.PictureBox pbArticulo;
+        private System.Windows.Forms.Label listadotxt;
     }
 }
