@@ -39,17 +39,17 @@ namespace WinFormApp1
             // dgvListado
             // 
             this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListado.Location = new System.Drawing.Point(30, 73);
+            this.dgvListado.Location = new System.Drawing.Point(12, 73);
             this.dgvListado.Name = "dgvListado";
-            this.dgvListado.Size = new System.Drawing.Size(529, 313);
+            this.dgvListado.Size = new System.Drawing.Size(658, 313);
             this.dgvListado.TabIndex = 0;
             this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvListado_SelectionChanged);
             // 
             // pbArticulo
             // 
-            this.pbArticulo.Location = new System.Drawing.Point(590, 73);
+            this.pbArticulo.Location = new System.Drawing.Point(690, 73);
             this.pbArticulo.Name = "pbArticulo";
-            this.pbArticulo.Size = new System.Drawing.Size(305, 313);
+            this.pbArticulo.Size = new System.Drawing.Size(325, 313);
             this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbArticulo.TabIndex = 1;
             this.pbArticulo.TabStop = false;
@@ -58,7 +58,7 @@ namespace WinFormApp1
             // 
             this.listadotxt.AutoSize = true;
             this.listadotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listadotxt.Location = new System.Drawing.Point(30, 28);
+            this.listadotxt.Location = new System.Drawing.Point(12, 26);
             this.listadotxt.Name = "listadotxt";
             this.listadotxt.Size = new System.Drawing.Size(201, 25);
             this.listadotxt.TabIndex = 2;
@@ -68,7 +68,7 @@ namespace WinFormApp1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 407);
+            this.ClientSize = new System.Drawing.Size(1027, 407);
             this.Controls.Add(this.listadotxt);
             this.Controls.Add(this.pbArticulo);
             this.Controls.Add(this.dgvListado);

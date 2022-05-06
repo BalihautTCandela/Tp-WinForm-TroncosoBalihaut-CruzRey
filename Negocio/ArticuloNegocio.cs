@@ -21,7 +21,8 @@ namespace Negocio
             {
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select Codigo,Nombre,Descripcion,Precio,IdMarca,IdCategoria,ImagenUrl FROM ARTICULOS ";
+                comando.CommandText = "select A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion Marca, C.Descripcion Categoria, A.ImagenUrl FROM ARTICULOS AS A, MARCAS as M, CATEGORIAS as C WHERE A.IdMarca = M.Id and A.IdCategoria = C.Id";
+                //comando.CommandText = "select A.Codigo,A.Nombre,A.Descripcion ,A.Precio,A.IdMarca, M.Descripcion Marca, A.IdCategoria,A.ImagenUrl FROM ARTICULOS as A, MARCAS as M WHERE A.IdMarca = M.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -34,10 +35,12 @@ namespace Negocio
                     aux.NombreArt = (string)lector["Nombre"];
                     aux.DescripcionArt = (string)lector["Descripcion"];
                     aux.PrecioArt = (decimal)lector["Precio"];
-                    aux.IdM = new Marca();
-                    aux.IdM.IdMarca = (int)lector["IdMarca"];
-                    aux.IdC = new Categoria();
-                    aux.IdC.IdCategoria = (int)lector["IdCategoria"];
+                    aux.Marca = new Marca();
+                    //aux.IdM.IdMarca = (int)lector["IdMarca"];
+                    aux.Marca.DescripcionMarca = (string)lector["Marca"];
+                    aux.Categoria = new Categoria();
+                    //aux.IdC.IdCategoria = (int)lector["IdCategoria"];
+                    aux.Categoria.DescripcionCategoria = (string)lector["Categoria"];
                     aux.ImagenArt = (string)lector["ImagenUrl"];
                     lista.Add(aux);
                 }
