@@ -127,6 +127,7 @@ namespace WinFormApp1
             this.btnBuscar.TabIndex = 7;
             this.btnBuscar.Text = "IR";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAgregar
             // 
@@ -137,6 +138,7 @@ namespace WinFormApp1
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "IR";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
