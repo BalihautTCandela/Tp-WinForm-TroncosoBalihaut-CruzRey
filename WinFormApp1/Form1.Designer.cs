@@ -41,7 +41,7 @@ namespace WinFormApp1
             this.btnListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnListar.Location = new System.Drawing.Point(99, 224);
+            this.btnListar.Location = new System.Drawing.Point(99, 225);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(263, 42);
             this.btnListar.TabIndex = 6;
