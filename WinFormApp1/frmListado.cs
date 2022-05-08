@@ -23,10 +23,17 @@ namespace WinFormApp1
         private void frmListado_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            ListaArticulos = negocio.listar();
-            dgvListado.DataSource = ListaArticulos;
-            dgvListado.Columns["ImagenArt"].Visible = false;
-            CargarImagen(ListaArticulos[0].ImagenArt);
+            try
+            { 
+                ListaArticulos = negocio.listar();
+                dgvListado.DataSource = ListaArticulos;
+                dgvListado.Columns["ImagenArt"].Visible = false;
+                CargarImagen(ListaArticulos[0].ImagenArt);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void dgvListado_SelectionChanged(object sender, EventArgs e)

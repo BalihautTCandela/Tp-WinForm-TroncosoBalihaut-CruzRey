@@ -32,6 +32,7 @@ namespace WinFormApp1
 
                 nuevo.Marca = (Marca)cboMarca.SelectedItem;
                 nuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                nuevo.PrecioArt = numericUpDown1.Value;
 
                 negocio.agregar(nuevo);
                 MessageBox.Show("Articulo agregado");

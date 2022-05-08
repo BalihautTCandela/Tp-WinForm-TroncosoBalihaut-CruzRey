@@ -31,7 +31,8 @@ namespace Negocio
                     aux.Marca.DescripcionMarca = (string)datos.Lector["Marca"];
                     aux.Categoria = new Categoria();
                     aux.Categoria.DescripcionCategoria = (string)datos.Lector["Categoria"];
-                    aux.ImagenArt = (string)datos.Lector["ImagenUrl"];
+                    if(!(datos.Lector["ImagenUrl"] is DBNull))
+                        aux.ImagenArt = (string)datos.Lector["ImagenUrl"];
 
                     lista.Add(aux);
                 }
@@ -56,7 +57,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion, IdMarca, IdCategoria) VALUES ('" + nuevoArt.CodigoArt + "', '" + nuevoArt.NombreArt + "', '" + nuevoArt.DescripcionArt + "', @IdMarca, @IdCategoria)");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion, IdMarca, IdCategoria, Precio) VALUES ('" + nuevoArt.CodigoArt + "', '" + nuevoArt.NombreArt + "', '" + nuevoArt.DescripcionArt + "', @IdMarca, @IdCategoria," + nuevoArt.PrecioArt +")");
                 datos.setearParametro("@IdMarca",nuevoArt.Marca.IdMarca);
                 datos.setearParametro("@IdCategoria", nuevoArt.Categoria.IdCategoria);
                 datos.ejecutarAccion();
