@@ -55,5 +55,17 @@ namespace WinFormApp1
 
 
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            /*frmAltaArticulo ventana = new frmAltaArticulo();
+            ventana.ShowDialog();*/
+        }
+
+        private void toolAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaArticulo ventana = new frmAltaArticulo();
+            ventana.ShowDialog();
+        }
     }
 }

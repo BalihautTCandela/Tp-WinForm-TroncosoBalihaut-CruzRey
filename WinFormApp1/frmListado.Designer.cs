@@ -29,54 +29,166 @@ namespace WinFormApp1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListado));
             this.dgvListado = new System.Windows.Forms.DataGridView();
-            this.pbArticulo = new System.Windows.Forms.PictureBox();
             this.listadotxt = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolEliminar = new System.Windows.Forms.ToolStripButton();
+            this.toolDetalle = new System.Windows.Forms.ToolStripButton();
+            this.pbArticulo = new System.Windows.Forms.PictureBox();
+            this.toolAgregar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.porCodigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porNombreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvListado
             // 
+            this.dgvListado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(117)))), ((int)(((byte)(181)))));
+            this.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListado.Location = new System.Drawing.Point(12, 73);
+            this.dgvListado.Location = new System.Drawing.Point(12, 97);
             this.dgvListado.Name = "dgvListado";
-            this.dgvListado.Size = new System.Drawing.Size(658, 313);
+            this.dgvListado.Size = new System.Drawing.Size(645, 289);
             this.dgvListado.TabIndex = 0;
             this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvListado_SelectionChanged);
-            // 
-            // pbArticulo
-            // 
-            this.pbArticulo.Location = new System.Drawing.Point(690, 73);
-            this.pbArticulo.Name = "pbArticulo";
-            this.pbArticulo.Size = new System.Drawing.Size(325, 313);
-            this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbArticulo.TabIndex = 1;
-            this.pbArticulo.TabStop = false;
             // 
             // listadotxt
             // 
             this.listadotxt.AutoSize = true;
-            this.listadotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listadotxt.Location = new System.Drawing.Point(12, 26);
+            this.listadotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listadotxt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.listadotxt.Location = new System.Drawing.Point(12, 50);
             this.listadotxt.Name = "listadotxt";
-            this.listadotxt.Size = new System.Drawing.Size(201, 25);
+            this.listadotxt.Size = new System.Drawing.Size(223, 29);
             this.listadotxt.TabIndex = 2;
             this.listadotxt.Text = "Listado de Articulos";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolAgregar,
+            this.toolStripButton2,
+            this.toolEliminar,
+            this.toolDetalle,
+            this.toolStripDropDownButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1027, 27);
+            this.toolStrip1.TabIndex = 3;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStripButton2.Image = global::WinFormApp1.Properties.Resources.modificar;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(93, 24);
+            this.toolStripButton2.Text = "Modificar";
+            // 
+            // toolEliminar
+            // 
+            this.toolEliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolEliminar.Image = global::WinFormApp1.Properties.Resources.eliminar;
+            this.toolEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolEliminar.Name = "toolEliminar";
+            this.toolEliminar.Size = new System.Drawing.Size(83, 24);
+            this.toolEliminar.Text = "Eliminar";
+            // 
+            // toolDetalle
+            // 
+            this.toolDetalle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolDetalle.Image = global::WinFormApp1.Properties.Resources.detalle;
+            this.toolDetalle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolDetalle.Name = "toolDetalle";
+            this.toolDetalle.Size = new System.Drawing.Size(77, 24);
+            this.toolDetalle.Text = "Detalle";
+            // 
+            // pbArticulo
+            // 
+            this.pbArticulo.Location = new System.Drawing.Point(690, 97);
+            this.pbArticulo.Name = "pbArticulo";
+            this.pbArticulo.Size = new System.Drawing.Size(325, 289);
+            this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbArticulo.TabIndex = 1;
+            this.pbArticulo.TabStop = false;
+            // 
+            // toolAgregar
+            // 
+            this.toolAgregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolAgregar.Image = global::WinFormApp1.Properties.Resources.agregar;
+            this.toolAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolAgregar.Name = "toolAgregar";
+            this.toolAgregar.Size = new System.Drawing.Size(83, 24);
+            this.toolAgregar.Text = "Agregar";
+            this.toolAgregar.Click += new System.EventHandler(this.toolAgregar_Click);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.porCodigoToolStripMenuItem,
+            this.porNombreToolStripMenuItem,
+            this.porMarcaToolStripMenuItem,
+            this.porCategoriaToolStripMenuItem});
+            this.toolStripDropDownButton1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStripDropDownButton1.Image = global::WinFormApp1.Properties.Resources.busqueda;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(103, 24);
+            this.toolStripDropDownButton1.Text = "Busqueda";
+            // 
+            // porCodigoToolStripMenuItem
+            // 
+            this.porCodigoToolStripMenuItem.Name = "porCodigoToolStripMenuItem";
+            this.porCodigoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.porCodigoToolStripMenuItem.Text = "Por Codigo";
+            // 
+            // porNombreToolStripMenuItem
+            // 
+            this.porNombreToolStripMenuItem.Name = "porNombreToolStripMenuItem";
+            this.porNombreToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.porNombreToolStripMenuItem.Text = "Por Nombre";
+            // 
+            // porMarcaToolStripMenuItem
+            // 
+            this.porMarcaToolStripMenuItem.Name = "porMarcaToolStripMenuItem";
+            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.porMarcaToolStripMenuItem.Text = "Por Marca";
+            // 
+            // porCategoriaToolStripMenuItem
+            // 
+            this.porCategoriaToolStripMenuItem.Name = "porCategoriaToolStripMenuItem";
+            this.porCategoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.porCategoriaToolStripMenuItem.Text = "Por Categoria";
             // 
             // frmListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(117)))), ((int)(((byte)(181)))));
             this.ClientSize = new System.Drawing.Size(1027, 407);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.listadotxt);
             this.Controls.Add(this.pbArticulo);
             this.Controls.Add(this.dgvListado);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmListado";
+            this.Text = "Listado de Articulos";
             this.Load += new System.EventHandler(this.frmListado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -88,5 +200,15 @@ namespace WinFormApp1
         private System.Windows.Forms.DataGridView dgvListado;
         private System.Windows.Forms.PictureBox pbArticulo;
         private System.Windows.Forms.Label listadotxt;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolEliminar;
+        private System.Windows.Forms.ToolStripButton toolDetalle;
+        private System.Windows.Forms.ToolStripButton toolAgregar;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem porCodigoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porNombreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porMarcaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porCategoriaToolStripMenuItem;
     }
 }
