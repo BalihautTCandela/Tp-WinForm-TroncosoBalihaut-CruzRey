@@ -17,7 +17,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("select A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion Marca, C.Descripcion Categoria, A.ImagenUrl FROM ARTICULOS AS A, MARCAS as M, CATEGORIAS as C WHERE A.IdMarca = M.Id and A.IdCategoria = C.Id");
+                datos.setearConsulta("select Codigo, Nombre, A.Descripcion, Precio, M.Descripcion Marca, C.Descripcion Categoria, ImagenUrl FROM ARTICULOS AS A, MARCAS as M, CATEGORIAS as C WHERE IdMarca = M.Id and IdCategoria = C.Id");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -57,6 +57,8 @@ namespace Negocio
             try
             {
                 datos.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion, IdMarca, IdCategoria) VALUES ('" + nuevoArt.CodigoArt + "', '" + nuevoArt.NombreArt + "', '" + nuevoArt.DescripcionArt + "', @IdMarca, @IdCategoria)");
+                datos.setearParametro("@IdMarca",nuevoArt.Marca.IdMarca);
+                datos.setearParametro("@IdCategoria", nuevoArt.Categoria.IdCategoria);
                 datos.ejecutarAccion();
             }
             catch(Exception ex)
