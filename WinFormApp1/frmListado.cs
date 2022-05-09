@@ -72,5 +72,12 @@ namespace WinFormApp1
             ventana.ShowDialog();
             Cargar();
         }
+
+        private void toolEliminar_Click(object sender, EventArgs e)
+        {
+            frmEliminar ventana = new frmEliminar();
+            ventana.ShowDialog();
+            Cargar();
+        }
     }
 }

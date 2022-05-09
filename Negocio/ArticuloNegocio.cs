@@ -71,6 +71,23 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+
+        public bool eliminar(string code)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("delete from ARTICULOS where Codigo = @Codigo");
+                datos.setearParametro("@Codigo", code);
+                datos.ejecutarAccion();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false; //probar
+                throw ex;
+            }
+        }
     }
 }
 

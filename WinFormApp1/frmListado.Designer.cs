@@ -116,6 +116,7 @@ namespace WinFormApp1
             this.toolEliminar.Name = "toolEliminar";
             this.toolEliminar.Size = new System.Drawing.Size(83, 24);
             this.toolEliminar.Text = "Eliminar";
+            this.toolEliminar.Click += new System.EventHandler(this.toolEliminar_Click);
             // 
             // toolDetalle
             // 
