@@ -33,16 +33,16 @@ namespace WinFormApp1
             this.dgvListado = new System.Windows.Forms.DataGridView();
             this.listadotxt = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolAgregar = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolDetalle = new System.Windows.Forms.ToolStripButton();
-            this.pbArticulo = new System.Windows.Forms.PictureBox();
-            this.toolAgregar = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.porCodigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porNombreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbArticulo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
@@ -53,8 +53,11 @@ namespace WinFormApp1
             this.dgvListado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(117)))), ((int)(((byte)(181)))));
             this.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListado.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListado.Location = new System.Drawing.Point(12, 97);
+            this.dgvListado.MultiSelect = false;
             this.dgvListado.Name = "dgvListado";
+            this.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListado.Size = new System.Drawing.Size(645, 289);
             this.dgvListado.TabIndex = 0;
             this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvListado_SelectionChanged);
@@ -86,6 +89,16 @@ namespace WinFormApp1
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolAgregar
+            // 
+            this.toolAgregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolAgregar.Image = global::WinFormApp1.Properties.Resources.agregar;
+            this.toolAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolAgregar.Name = "toolAgregar";
+            this.toolAgregar.Size = new System.Drawing.Size(83, 24);
+            this.toolAgregar.Text = "Agregar";
+            this.toolAgregar.Click += new System.EventHandler(this.toolAgregar_Click);
+            // 
             // toolStripButton2
             // 
             this.toolStripButton2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -113,25 +126,6 @@ namespace WinFormApp1
             this.toolDetalle.Size = new System.Drawing.Size(77, 24);
             this.toolDetalle.Text = "Detalle";
             // 
-            // pbArticulo
-            // 
-            this.pbArticulo.Location = new System.Drawing.Point(690, 97);
-            this.pbArticulo.Name = "pbArticulo";
-            this.pbArticulo.Size = new System.Drawing.Size(325, 289);
-            this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbArticulo.TabIndex = 1;
-            this.pbArticulo.TabStop = false;
-            // 
-            // toolAgregar
-            // 
-            this.toolAgregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.toolAgregar.Image = global::WinFormApp1.Properties.Resources.agregar;
-            this.toolAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolAgregar.Name = "toolAgregar";
-            this.toolAgregar.Size = new System.Drawing.Size(83, 24);
-            this.toolAgregar.Text = "Agregar";
-            this.toolAgregar.Click += new System.EventHandler(this.toolAgregar_Click);
-            // 
             // toolStripDropDownButton1
             // 
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -149,26 +143,35 @@ namespace WinFormApp1
             // porCodigoToolStripMenuItem
             // 
             this.porCodigoToolStripMenuItem.Name = "porCodigoToolStripMenuItem";
-            this.porCodigoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.porCodigoToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.porCodigoToolStripMenuItem.Text = "Por Codigo";
             // 
             // porNombreToolStripMenuItem
             // 
             this.porNombreToolStripMenuItem.Name = "porNombreToolStripMenuItem";
-            this.porNombreToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.porNombreToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.porNombreToolStripMenuItem.Text = "Por Nombre";
             // 
             // porMarcaToolStripMenuItem
             // 
             this.porMarcaToolStripMenuItem.Name = "porMarcaToolStripMenuItem";
-            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.porMarcaToolStripMenuItem.Text = "Por Marca";
             // 
             // porCategoriaToolStripMenuItem
             // 
             this.porCategoriaToolStripMenuItem.Name = "porCategoriaToolStripMenuItem";
-            this.porCategoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.porCategoriaToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.porCategoriaToolStripMenuItem.Text = "Por Categoria";
+            // 
+            // pbArticulo
+            // 
+            this.pbArticulo.Location = new System.Drawing.Point(690, 97);
+            this.pbArticulo.Name = "pbArticulo";
+            this.pbArticulo.Size = new System.Drawing.Size(325, 289);
+            this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbArticulo.TabIndex = 1;
+            this.pbArticulo.TabStop = false;
             // 
             // frmListado
             // 

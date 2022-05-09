@@ -29,7 +29,7 @@ namespace WinFormApp1
                 nuevo.CodigoArt = txtnumeric.Text;
                 nuevo.NombreArt = txtNombre.Text;
                 nuevo.DescripcionArt = txtDescripcion.Text;
-
+                nuevo.ImagenArt = txtUrlImagen.Text;
                 nuevo.Marca = (Marca)cboMarca.SelectedItem;
                 nuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
                 nuevo.PrecioArt = numericUpDown1.Value;
@@ -57,6 +57,25 @@ namespace WinFormApp1
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            CargarImagen(txtUrlImagen.Text);
+        }
+
+        private void CargarImagen(string Imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(Imagen);
+            }
+            catch (Exception ex)
+            {
+                pbxArticulo.Load("https://www.agora-gallery.com/advice/wp-content/uploads/2015/10/image-placeholder.png");
+            }
+
+
         }
     }
 }

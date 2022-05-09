@@ -22,18 +22,7 @@ namespace WinFormApp1
 
         private void frmListado_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            try
-            { 
-                ListaArticulos = negocio.listar();
-                dgvListado.DataSource = ListaArticulos;
-                dgvListado.Columns["ImagenArt"].Visible = false;
-                CargarImagen(ListaArticulos[0].ImagenArt);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            Cargar();
         }
 
         private void dgvListado_SelectionChanged(object sender, EventArgs e)
@@ -62,10 +51,26 @@ namespace WinFormApp1
             ventana.ShowDialog();*/
         }
 
+        private void Cargar()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                ListaArticulos = negocio.listar();
+                dgvListado.DataSource = ListaArticulos;
+                dgvListado.Columns["ImagenArt"].Visible = false;
+                CargarImagen(ListaArticulos[0].ImagenArt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
         private void toolAgregar_Click(object sender, EventArgs e)
         {
             frmAltaArticulo ventana = new frmAltaArticulo();
             ventana.ShowDialog();
+            Cargar();
         }
     }
 }
