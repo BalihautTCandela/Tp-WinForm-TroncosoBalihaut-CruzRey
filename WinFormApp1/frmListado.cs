@@ -82,8 +82,18 @@ namespace WinFormApp1
         private void toolEliminar_Click(object sender, EventArgs e)
         {
             frmEliminar ventana = new frmEliminar();
-            ventana.ShowDialog();
-            Cargar();
+
+            if (dgvListado != null)
+            {
+                ventana.ShowDialog();
+                Cargar();
+            }
+            else
+            {
+                MessageBox.Show("No hay articulos existentes");
+            }
+            
+            
         }
 
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
