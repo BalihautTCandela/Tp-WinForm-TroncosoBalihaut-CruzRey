@@ -14,28 +14,55 @@ namespace WinFormApp1
 {
     public partial class frmAltaArticulo : Form
     {
+        private Articulo articulo = null;
         public frmAltaArticulo()
         {
             InitializeComponent();
+            Text = "AGREGAR ARTICULO";
+        }
+
+        public frmAltaArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+            Text = "MODIFICAR ARTICULO";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Articulo nuevo = new Articulo();
+           /// Articulo nuevo = new Articulo();
             ArticuloNegocio negocio = new ArticuloNegocio();
 
             try
             {
-                nuevo.CodigoArt = txtnumeric.Text;
-                nuevo.NombreArt = txtNombre.Text;
-                nuevo.DescripcionArt = txtDescripcion.Text;
-                nuevo.ImagenArt = txtUrlImagen.Text;
-                nuevo.Marca = (Marca)cboMarca.SelectedItem;
-                nuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
-                nuevo.PrecioArt = numericUpDown1.Value;
 
-                negocio.agregar(nuevo);
-                MessageBox.Show("Articulo agregado");
+                if (articulo == null)
+                {
+                    articulo = new Articulo();
+                }
+
+                articulo.CodigoArt = txtnumeric.Text;
+                articulo.NombreArt = txtNombre.Text;
+                articulo.DescripcionArt = txtDescripcion.Text;
+                articulo.ImagenArt = txtUrlImagen.Text;
+                articulo.Marca = (Marca)cboMarca.SelectedItem;
+                articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                articulo.PrecioArt = numericUpDown1.Value;
+
+                if(articulo.Id != 0)
+                {
+                    negocio.modificar(articulo);
+                    MessageBox.Show("Articulo modificado");
+                }
+                else
+                {
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Articulo agregado");
+                }
+                
+
+               
+
                 Close();
             }
             catch(Exception ex)
@@ -51,7 +78,24 @@ namespace WinFormApp1
             try
             {
                 cboMarca.DataSource = marcaNegocio.listar();
+                cboMarca.ValueMember = "IdMarca";
+                cboMarca.DisplayMember = "DescripcionMarca";
                 cboCategoria.DataSource = categoriaNegocio.listar();
+                cboCategoria.ValueMember = "IdCategoria";
+                cboCategoria.DisplayMember = "DescripcionCategoria";
+
+                if(articulo != null)
+                {
+                    txtnumeric.Text = articulo.CodigoArt;
+                    txtNombre.Text = articulo.NombreArt;
+                    txtDescripcion.Text = articulo.DescripcionArt;
+                    ///numericUpDown1.Value = articulo.PrecioArt;
+                    txtUrlImagen.Text = articulo.ImagenArt;
+                    CargarImagen(articulo.ImagenArt);
+                    cboMarca.SelectedValue = articulo.Marca.IdMarca;
+                    cboCategoria.SelectedValue = articulo.Categoria.IdCategoria;
+
+                }
             }
             catch(Exception ex)
             {

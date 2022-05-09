@@ -107,6 +107,7 @@ namespace WinFormApp1
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(93, 24);
             this.toolStripButton2.Text = "Modificar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolEliminar
             // 
@@ -145,25 +146,25 @@ namespace WinFormApp1
             // porCodigoToolStripMenuItem
             // 
             this.porCodigoToolStripMenuItem.Name = "porCodigoToolStripMenuItem";
-            this.porCodigoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.porCodigoToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.porCodigoToolStripMenuItem.Text = "Por Codigo";
             // 
             // porNombreToolStripMenuItem
             // 
             this.porNombreToolStripMenuItem.Name = "porNombreToolStripMenuItem";
-            this.porNombreToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.porNombreToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.porNombreToolStripMenuItem.Text = "Por Nombre";
             // 
             // porMarcaToolStripMenuItem
             // 
             this.porMarcaToolStripMenuItem.Name = "porMarcaToolStripMenuItem";
-            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.porMarcaToolStripMenuItem.Text = "Por Marca";
             // 
             // porCategoriaToolStripMenuItem
             // 
             this.porCategoriaToolStripMenuItem.Name = "porCategoriaToolStripMenuItem";
-            this.porCategoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.porCategoriaToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.porCategoriaToolStripMenuItem.Text = "Por Categoria";
             // 
             // pbArticulo

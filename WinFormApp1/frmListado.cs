@@ -70,6 +70,7 @@ namespace WinFormApp1
         private void ocultarColumnas()
         {
             dgvListado.Columns["ImagenArt"].Visible = false;
+            dgvListado.Columns["Id"].Visible = false;
         }
         private void toolAgregar_Click(object sender, EventArgs e)
         {
@@ -96,6 +97,15 @@ namespace WinFormApp1
             dgvListado.DataSource = ListadoNuevo;
             ocultarColumnas();
             //Cargar();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            Articulo Seleccionado;
+            Seleccionado = (Articulo)dgvListado.CurrentRow.DataBoundItem;
+            frmAltaArticulo Modificar = new frmAltaArticulo(Seleccionado);
+            Modificar.ShowDialog();
+            Cargar();
         }
     }
 }

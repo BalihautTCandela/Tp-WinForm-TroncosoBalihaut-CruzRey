@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Articulo
-    {
+    public class Articulo { 
+
+        public int Id { get; set; }
+    
         [DisplayName("Código")]
         public String CodigoArt { get; set; }
         [DisplayName("Nombre")]
