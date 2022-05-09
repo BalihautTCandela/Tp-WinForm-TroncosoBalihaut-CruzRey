@@ -58,13 +58,18 @@ namespace WinFormApp1
             {
                 ListaArticulos = negocio.listar();
                 dgvListado.DataSource = ListaArticulos;
-                dgvListado.Columns["ImagenArt"].Visible = false;
+                ocultarColumnas();
                 CargarImagen(ListaArticulos[0].ImagenArt);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void ocultarColumnas()
+        {
+            dgvListado.Columns["ImagenArt"].Visible = false;
         }
         private void toolAgregar_Click(object sender, EventArgs e)
         {
@@ -78,6 +83,19 @@ namespace WinFormApp1
             frmEliminar ventana = new frmEliminar();
             ventana.ShowDialog();
             Cargar();
+        }
+
+        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
+        {
+            frmBusqueda ventana = new frmBusqueda();
+            ventana.ShowDialog();
+
+            List<Articulo> ListadoNuevo = ventana.getListaFiltrada();
+
+            dgvListado.DataSource = null;
+            dgvListado.DataSource = ListadoNuevo;
+            ocultarColumnas();
+            //Cargar();
         }
     }
 }

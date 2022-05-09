@@ -134,35 +134,36 @@ namespace WinFormApp1
             this.porNombreToolStripMenuItem,
             this.porMarcaToolStripMenuItem,
             this.porCategoriaToolStripMenuItem});
-            this.toolStripDropDownButton1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStripDropDownButton1.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripDropDownButton1.Image = global::WinFormApp1.Properties.Resources.busqueda;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(103, 24);
             this.toolStripDropDownButton1.Text = "Busqueda";
+            this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
             // 
             // porCodigoToolStripMenuItem
             // 
             this.porCodigoToolStripMenuItem.Name = "porCodigoToolStripMenuItem";
-            this.porCodigoToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.porCodigoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.porCodigoToolStripMenuItem.Text = "Por Codigo";
             // 
             // porNombreToolStripMenuItem
             // 
             this.porNombreToolStripMenuItem.Name = "porNombreToolStripMenuItem";
-            this.porNombreToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.porNombreToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.porNombreToolStripMenuItem.Text = "Por Nombre";
             // 
             // porMarcaToolStripMenuItem
             // 
             this.porMarcaToolStripMenuItem.Name = "porMarcaToolStripMenuItem";
-            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.porMarcaToolStripMenuItem.Text = "Por Marca";
             // 
             // porCategoriaToolStripMenuItem
             // 
             this.porCategoriaToolStripMenuItem.Name = "porCategoriaToolStripMenuItem";
-            this.porCategoriaToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.porCategoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.porCategoriaToolStripMenuItem.Text = "Por Categoria";
             // 
             // pbArticulo

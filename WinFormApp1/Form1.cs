@@ -22,16 +22,5 @@ namespace WinFormApp1
             frmListado ventana = new frmListado();
             ventana.ShowDialog();
         }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            frmAltaArticulo ventana = new frmAltaArticulo();
-            ventana.ShowDialog();
-        }
     }
 }
