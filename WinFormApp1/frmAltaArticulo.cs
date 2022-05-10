@@ -84,12 +84,13 @@ namespace WinFormApp1
                 cboCategoria.ValueMember = "IdCategoria";
                 cboCategoria.DisplayMember = "DescripcionCategoria";
 
+
                 if(articulo != null)
                 {
                     txtnumeric.Text = articulo.CodigoArt;
                     txtNombre.Text = articulo.NombreArt;
                     txtDescripcion.Text = articulo.DescripcionArt;
-                    ///numericUpDown1.Value = articulo.PrecioArt;
+                    numericUpDown1.Value = articulo.PrecioArt;
                     txtUrlImagen.Text = articulo.ImagenArt;
                     CargarImagen(articulo.ImagenArt);
                     cboMarca.SelectedValue = articulo.Marca.IdMarca;
@@ -121,5 +122,18 @@ namespace WinFormApp1
 
 
         }
+
+
+        /*private void txtnumeric_Leave(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "")
+            {
+                tilde1.Visible = true;
+            }
+            else
+            {
+                tilde1.Visible = false;
+            }
+        }*/
     }
 }

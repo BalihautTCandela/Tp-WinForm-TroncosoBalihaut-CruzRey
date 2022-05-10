@@ -27,8 +27,12 @@ namespace WinFormApp1
 
         private void dgvListado_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo Elegido = (Articulo)dgvListado.CurrentRow.DataBoundItem;
-            CargarImagen(Elegido.ImagenArt);
+            if (dgvListado.RowCount > 0)
+            {
+                Articulo Elegido = (Articulo)dgvListado.CurrentRow.DataBoundItem;
+                CargarImagen(Elegido.ImagenArt);
+            }
+
         }
 
         private void CargarImagen(string Imagen)
@@ -59,7 +63,10 @@ namespace WinFormApp1
                 ListaArticulos = negocio.listar();
                 dgvListado.DataSource = ListaArticulos;
                 ocultarColumnas();
-                CargarImagen(ListaArticulos[0].ImagenArt);
+                if (dgvListado.RowCount > 0)
+                {
+                    CargarImagen(ListaArticulos[0].ImagenArt);
+                }                  
             }
             catch (Exception ex)
             {
@@ -83,14 +90,14 @@ namespace WinFormApp1
         {
             frmEliminar ventana = new frmEliminar();
 
-            if (dgvListado != null)
+            if (dgvListado.RowCount > 0)
             {
                 ventana.ShowDialog();
                 Cargar();
             }
             else
             {
-                MessageBox.Show("No hay articulos existentes");
+                MessageBox.Show("No hay articulos existentes, agregue un articulo");
             }
             
             
@@ -99,23 +106,47 @@ namespace WinFormApp1
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
             frmBusqueda ventana = new frmBusqueda();
-            ventana.ShowDialog();
 
-            List<Articulo> ListadoNuevo = ventana.getListaFiltrada();
 
-            dgvListado.DataSource = null;
-            dgvListado.DataSource = ListadoNuevo;
-            ocultarColumnas();
+            if (dgvListado.RowCount > 0)
+            {
+                ventana.ShowDialog();
+                List<Articulo> ListadoNuevo = ventana.getListaFiltrada();
+
+                dgvListado.DataSource = null;
+                dgvListado.DataSource = ListadoNuevo;
+                ocultarColumnas();
+            }
+            else
+            {
+                MessageBox.Show("No hay articulos existentes, agregue un articulo");
+            }
+
             //Cargar();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             Articulo Seleccionado;
-            Seleccionado = (Articulo)dgvListado.CurrentRow.DataBoundItem;
-            frmAltaArticulo Modificar = new frmAltaArticulo(Seleccionado);
-            Modificar.ShowDialog();
-            Cargar();
+            try
+            {
+                if (dgvListado.RowCount > 0)
+                {
+                    Seleccionado = (Articulo)dgvListado.CurrentRow.DataBoundItem;
+                    frmAltaArticulo Modificar = new frmAltaArticulo(Seleccionado);
+                    Modificar.ShowDialog();
+                    Cargar();
+                }
+                else
+                {
+                    MessageBox.Show("No hay articulos existentes, agregue un articulo");
+                }
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

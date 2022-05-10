@@ -38,10 +38,6 @@ namespace WinFormApp1
             this.toolEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolDetalle = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.porCodigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.porNombreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.porMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.porCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbArticulo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -130,11 +126,6 @@ namespace WinFormApp1
             // 
             // toolStripDropDownButton1
             // 
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.porCodigoToolStripMenuItem,
-            this.porNombreToolStripMenuItem,
-            this.porMarcaToolStripMenuItem,
-            this.porCategoriaToolStripMenuItem});
             this.toolStripDropDownButton1.ForeColor = System.Drawing.SystemColors.Control;
             this.toolStripDropDownButton1.Image = global::WinFormApp1.Properties.Resources.busqueda;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -142,30 +133,6 @@ namespace WinFormApp1
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(103, 24);
             this.toolStripDropDownButton1.Text = "Busqueda";
             this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
-            // 
-            // porCodigoToolStripMenuItem
-            // 
-            this.porCodigoToolStripMenuItem.Name = "porCodigoToolStripMenuItem";
-            this.porCodigoToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.porCodigoToolStripMenuItem.Text = "Por Codigo";
-            // 
-            // porNombreToolStripMenuItem
-            // 
-            this.porNombreToolStripMenuItem.Name = "porNombreToolStripMenuItem";
-            this.porNombreToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.porNombreToolStripMenuItem.Text = "Por Nombre";
-            // 
-            // porMarcaToolStripMenuItem
-            // 
-            this.porMarcaToolStripMenuItem.Name = "porMarcaToolStripMenuItem";
-            this.porMarcaToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.porMarcaToolStripMenuItem.Text = "Por Marca";
-            // 
-            // porCategoriaToolStripMenuItem
-            // 
-            this.porCategoriaToolStripMenuItem.Name = "porCategoriaToolStripMenuItem";
-            this.porCategoriaToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.porCategoriaToolStripMenuItem.Text = "Por Categoria";
             // 
             // pbArticulo
             // 
@@ -212,9 +179,5 @@ namespace WinFormApp1
         private System.Windows.Forms.ToolStripButton toolDetalle;
         private System.Windows.Forms.ToolStripButton toolAgregar;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem porCodigoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem porNombreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem porMarcaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem porCategoriaToolStripMenuItem;
     }
 }
